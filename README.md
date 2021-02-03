@@ -2,7 +2,7 @@
 LAPPSは[Linked Approval Protocol](https://github.com/kittoku/Linked-Approval-Protocol)をPowerShellで実装した簡易的な電子承認システムです．最低限な電子承認の機能を最小限のコストで実現することを目的として作成されました．
 
 ## できること
-- ECSDA(secp256k1)を用いたファイルの承認
+- ECDSA(secp256k1)を用いたファイルの承認
 - SHA-256を用いたファイルの完全性の証明
 - 承認行為の前後関係の証明
 
