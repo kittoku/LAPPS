@@ -191,6 +191,23 @@ function Approve-File {
 
     $signature = New-Signature -Hash $hash -LastSignature $last_record.SIGNATURE -Passphrase $passphrase
 
+
+    $candidate = [PSCustomObject]@{
+        INDEX = $array[0]
+        DATETIME = $array[1]
+        TITLE = $array[2]
+        APPROVER = $array[3]
+        HASH = $array[4]
+        SIGNATURE = $array[5]
+    }
+
+    $result = Confirm-Record -Record $candidate -Property SIGNATURE -LastSignature $last_record.SIGNATURE
+
+    if ($result.RESULT -ne 'SUCESS') {
+        throw "The private key seems to be inconsistent with its public key"
+    }
+
+
     "INSERT INTO link VALUES ($index, '${DateTime}', '${Title}', '${Env:LAPPS_SELF}', '${hash}', '${signature}')" |
         New-SqlCommand -Path $Env:LAPPS_LINK_DATABASE |
         Invoke-ExternalCommand |
