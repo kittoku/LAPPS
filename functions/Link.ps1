@@ -201,12 +201,12 @@ function Approve-File {
 
 
     $candidate = [PSCustomObject]@{
-        INDEX = $array[0]
-        DATETIME = $array[1]
-        TITLE = $array[2]
-        APPROVER = $array[3]
-        HASH = $array[4]
-        SIGNATURE = $array[5]
+        INDEX = $index
+        DATETIME = $DateTime
+        TITLE = $Title
+        APPROVER = $Env:LAPPS_SELF
+        HASH = $hash
+        SIGNATURE = $signature
     }
 
     $result = Confirm-Record -Record $candidate -Property SIGNATURE -LastSignature $last_record.SIGNATURE
