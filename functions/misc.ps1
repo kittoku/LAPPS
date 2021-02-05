@@ -79,6 +79,10 @@ function ConvertTo-Bytes {
     )
 
     process {
+        if (($InputObject.Length -band 1) -ne 0) {
+            throw "The length of HEX string is not even"
+        }
+
         $length = $InputObject.Length -shr 1
 
         $array = [System.Array]::CreateInstance([Byte], $length)

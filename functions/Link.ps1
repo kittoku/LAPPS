@@ -136,7 +136,7 @@ function Confirm-Record {
 
         Remove-Item $pub_pem, $plain, $challenge
 
-        if ($result -eq 'Verification Failure') {
+        if ($result -ne 'Verified OK') {
             New-ConfirmResult -Type FAILURE -Reason "Verifying SIGNATURE is failed" | Write-Output
             return
         }
@@ -156,7 +156,7 @@ function Approve-File {
     )
 
     $key_record = Get-KeyRecord
-    if ($key_record.STATUS -eq 'INVALID') {
+    if ($key_record.STATUS -ne 'VALID') {
         throw "Current approver(ENV:LAPPS_SELF)'s status is INVALID"
     }
 
