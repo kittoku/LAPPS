@@ -31,11 +31,9 @@ OpenSSLとSQLiteは[こちら](https://github.com/kittoku/LAPPS/releases/latest/
   
 また，LAPPSを使用する全員が書き込み権限を持つ共有ディレクトリが必要です．
 
-## チュートリアル(WIP)
-1. モジュールのインポート
-2. データベースの整備
-3. ユーザーの登録
-4. ファイルの承認
+## チュートリアル
+1. [モジュールのインポート/データベースの生成/ユーザーの登録](tutorial/tutorial_prepare.ps1)
+2. [ファイルの承認](tutorial/tutorial_approve.ps1)
 
 ## ライセンス
 本モジュールはMITライセンスの下で公開されています．
