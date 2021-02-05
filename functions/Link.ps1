@@ -131,13 +131,21 @@ function Confirm-Record {
         [System.IO.File]::WriteAllBytes($challenge, $bytes)
 
 
-        $result = "${Env:LAPPS_OPENSSL} dgst -sha256 -verify ${pub_pem} -signature ${challenge} ${plain}"
+        try {
+            $result = "${Env:LAPPS_OPENSSL} dgst -sha256 -verify ${pub_pem} -signature ${challenge} ${plain}"
             | Invoke-ExternalCommand
+        } catch {
+            $result = "OpenSSL error: ${_}"
+        }
 
         Remove-Item $pub_pem, $plain, $challenge
 
         if ($result -ne 'Verified OK') {
-            New-ConfirmResult -Type FAILURE -Reason "Verifying SIGNATURE is failed" | Write-Output
+            if ($result -eq 'Verification Failure') {
+                $result = "HASH or the last SIGNATURE seems to be wrong"
+            }
+
+            New-ConfirmResult -Type FAILURE -Reason $result | Write-Output
             return
         }
     }
