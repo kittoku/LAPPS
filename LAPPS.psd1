@@ -68,7 +68,25 @@ Copyright = 'MIT License'
 # NestedModules = @()
 
 # Functions to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no functions to export.
-FunctionsToExport = @()
+FunctionsToExport = @(
+    'New-KeyDatabase',
+    'Register-Approver',
+    'Unregister-Approver',
+    'Edit-ApproverStatus',
+    'Get-KeyRecord',
+    'Get-AllKeyRecord',
+    'Split-KeyRecord',
+    'New-LinkDatabase',
+    'New-SaltedHash',
+    'New-Signature',
+    'New-ConfirmResult',
+    'Confirm-Record',
+    'Approve-File',
+    'Get-LinkRecord',
+    'Get-LastLinkRecord',
+    'Get-AllLinkRecord',
+    'Split-LinkRecord'
+)
 
 # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
 CmdletsToExport = @()

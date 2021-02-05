@@ -1,4 +1,4 @@
-Import-Module -Name C:\WHERE_LAPPS_EXISTS\LAPPS.psm1
+Import-Module -Name C:\TEST\LAPPS
 
 $Env:LAPPS_OPENSSL = 'C:\TEST\LibreSSL\openssl.exe'
 $Env:LAPPS_SQLITE = 'C:\TEST\sqlite3.exe'
