@@ -211,7 +211,7 @@ function Approve-File {
 
     $result = Confirm-Record -Record $candidate -Property SIGNATURE -LastSignature $last_record.SIGNATURE
 
-    if ($result.RESULT -ne 'SUCESS') {
+    if ($result.RESULT -ne 'SUCCESS') {
         throw "The private key seems to be inconsistent with its public key"
     }
 
