@@ -27,7 +27,7 @@ LAPPSの動作には以下のソフトウェアが必要です．すべてOSSと
 - [OpenSSL](https://www.openssl.org)の実行可能なバイナリ
 - [SQLite](https://www.sqlite.org)の実行可能なバイナリ
 
-OpenSSLとSQLiteは[こちら](https://github.com/kittoku/LAPPS/releases/latest/download/external.zip)から再配布しています．OpenSSLについては互換性のある[LibreSSL](https://github.com/libressl-portable/portable)を私がビルドしたものを再配布しています．慎重な方はご自身でビルドしてください．  
+OpenSSLとSQLiteは[こちら](https://github.com/kittoku/LAPPS/releases/download/v0.0.0/external.zip)から再配布しています．OpenSSLについては互換性のある[LibreSSL](https://github.com/libressl-portable/portable)を私がビルドしたものを再配布しています．慎重な方はご自身でビルドしてください．  
   
 また，LAPPSを使用する全員が書き込み権限を持つ共有ディレクトリが必要です．
 
